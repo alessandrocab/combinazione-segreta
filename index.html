@@ -6,106 +6,112 @@
   <title>Combinazione Segreta</title>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'MedievalSharp', cursive;
-    background-image: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.6s ease-in-out;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .input-wrapper {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-
-  .input-wrapper input {
-    width: 100%;
-    padding: 0.8rem 2.5rem 0.8rem 1rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #aaa;
-    box-sizing: border-box;
-  }
-
-  .eye-button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-
-  button {
-    padding: 0.7rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #6a4c93;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  button:hover {
-    background-color: #5b3b85;
-  }
-
-  .revealed {
-    background-image: url('https://www.viaggiaescopri.it/wp-content/uploads/2012/10/Chiesa-di-San-Nicol%C3%B2-cosa-vedere-a-Guspini.jpg');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 999;
-    color: white;
-    font-size: 2rem;
-    text-shadow: 2px 2px 5px black;
-    animation: fadeIn 0.6s ease-in-out;
-    padding: 2rem;
-    text-align: center;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'MedievalSharp', cursive;
+      background: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
     }
-    to {
-      opacity: 1;
-      transform: scale(1);
+
+    .container {
+      background: rgba(255, 255, 255, 0.88);
+      padding: 2rem;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      text-align: center;
+      animation: fadeIn 1s ease;
     }
-  }
-</style>
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #888;
+    }
+
+    .eye-button {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 0.9rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #6a4c93;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #59307d;
+    }
+
+    .revealed {
+      background-image: url('https://www.viaggiaescopri.it/wp-content/uploads/2012/10/Chiesa-di-San-Nicol%C3%B2-cosa-vedere-a-Guspini.jpg');
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 999;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 2px 2px 5px black;
+      padding: 2rem;
+      animation: fadeIn 1s ease;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .input-wrapper input {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container" id="main">
@@ -117,38 +123,38 @@
     <button onclick="checkPassword()">Svela il segreto</button>
   </div>
 
-  <div class="revealed" id="revealed style="display: none;">
+  <div class="revealed" id="revealed" style="display: none;">
     <div>✨ Hai scoperto il luogo segreto! ✨</div>
-    <button style="margin-top: 20px;" onclick="goBack()">⬅ Torna indietro</button>
+    <button style="margin-top: 30px;" onclick="goBack()">⬅ Torna indietro</button>
   </div>
-  <audio id="errorSound" src="wrong.mp3"></audio>
-  <audio id="magicSound" src="suonomagico.mp3" preload="auto"></audio>
+
+  <!-- Audio -->
+  <audio id="successSound" src="magic-success.mp3" preload="auto"></audio>
+  <audio id="errorSound" src="magic-fail.mp3" preload="auto"></audio>
 
   <script>
-  function togglePassword() {
-    const input = document.getElementById("passwordInput");
-    input.type = input.type === "password" ? "text" : "password";
-  }
-
-  function checkPassword() {
-    const input = document.getElementById("passwordInput").value.trim();
-    if (input === "segreto123") {
-      document.getElementById("main").style.display = "none";
-      document.getElementById("revealed").style.display = "flex";
-      document.getElementById("successSound").play(); // Se hai già un suono corretto
-    } else {
-      const errorAudio = document.getElementById("errorSound");
-      errorAudio.currentTime = 0; // Riavvia se già in riproduzione
-      errorAudio.play();
-      alert("Combinazione errata. Riprova.");
+    function togglePassword() {
+      const input = document.getElementById("passwordInput");
+      input.type = input.type === "password" ? "text" : "password";
     }
-  }
 
-  function goBack() {
-    document.getElementById("revealed").style.display = "none";
-    document.getElementById("main").style.display = "block";
-    document.getElementById("passwordInput").value = "";
-  }
-</script>
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value.trim();
+      if (input === "segreto123") {
+        document.getElementById("main").style.display = "none";
+        document.getElementById("revealed").style.display = "flex";
+        document.getElementById("successSound").play();
+      } else {
+        document.getElementById("errorSound").play();
+        alert("Combinazione errata. Riprova.");
+      }
+    }
+
+    function goBack() {
+      document.getElementById("revealed").style.display = "none";
+      document.getElementById("main").style.display = "block";
+      document.getElementById("passwordInput").value = "";
+    }
+  </script>
 </body>
 </html>
