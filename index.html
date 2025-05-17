@@ -121,32 +121,34 @@
     <div>✨ Hai scoperto il luogo segreto! ✨</div>
     <button style="margin-top: 20px;" onclick="goBack()">⬅ Torna indietro</button>
   </div>
-
+  <audio id="errorSound" src="wrong.mp3"></audio>
   <audio id="magicSound" src="suonomagico.mp3" preload="auto"></audio>
 
   <script>
-    function togglePassword() {
-      const input = document.getElementById("passwordInput");
-      input.type = input.type === "password" ? "text" : "password";
-    }
+  function togglePassword() {
+    const input = document.getElementById("passwordInput");
+    input.type = input.type === "password" ? "text" : "password";
+  }
 
-    function checkPassword() {
-      const input = document.getElementById("passwordInput").value.trim();
-      if (input === "segreto123") {
-        document.getElementById("main").style.display = "none";
-        const revealed = document.getElementById("revealed");
-        revealed.style.display = "flex";
-        document.getElementById("magicSound").play();
-      } else {
-        alert("Combinazione errata. Riprova.");
-      }
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value.trim();
+    if (input === "segreto123") {
+      document.getElementById("main").style.display = "none";
+      document.getElementById("revealed").style.display = "flex";
+      document.getElementById("successSound").play(); // Se hai già un suono corretto
+    } else {
+      const errorAudio = document.getElementById("errorSound");
+      errorAudio.currentTime = 0; // Riavvia se già in riproduzione
+      errorAudio.play();
+      alert("Combinazione errata. Riprova.");
     }
+  }
 
-    function goBack() {
-      document.getElementById("revealed").style.display = "none";
-      document.getElementById("main").style.display = "block";
-      document.getElementById("passwordInput").value = "";
-    }
-  </script>
+  function goBack() {
+    document.getElementById("revealed").style.display = "none";
+    document.getElementById("main").style.display = "block";
+    document.getElementById("passwordInput").value = "";
+  }
+</script>
 </body>
 </html>
