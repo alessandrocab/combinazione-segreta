@@ -6,102 +6,106 @@
   <title>Combinazione Segreta</title>
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'MedievalSharp', cursive;
-      background: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MedievalSharp', cursive;
+    background-image: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .container {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 3rem;
-      border-radius: 16px;
-      width: 90%;
-      max-width: 600px;
-      text-align: center;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 1.2s ease-in-out;
-    }
+  .container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-in-out;
+  }
 
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 1.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-    .input-wrapper {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
+  .input-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+  }
 
-    .input-wrapper input {
-      width: 100%;
-      padding: 1rem;
-      padding-right: 3rem;
-      font-size: 1.2rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
+  .input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+  }
 
-    .eye-button {
-      position: absolute;
-      top: 50%;
-      right: 10px;
-      transform: translateY(-50%);
-      border: none;
-      background: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
+  .eye-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 
-    button {
-      padding: 0.8rem 1.4rem;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: #6a4c93;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+  button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #6a4c93;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
 
-    button:hover {
-      background-color: #593680;
-    }
+  button:hover {
+    background-color: #5b3b85;
+  }
 
-    .revealed {
-      position: fixed;
-      inset: 0;
-      background: url('https://www.viaggiaescopri.it/wp-content/uploads/2012/10/Chiesa-di-San-Nicol%C3%B2-cosa-vedere-a-Guspini.jpg') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-      font-size: 2rem;
-      text-shadow: 2px 2px 8px black;
-      z-index: 999;
-      animation: revealFade 1s ease forwards;
-      display: none;
-    }
+  .revealed {
+    background-image: url('https://www.viaggiaescopri.it/wp-content/uploads/2012/10/Chiesa-di-San-Nicol%C3%B2-cosa-vedere-a-Guspini.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px black;
+    animation: fadeIn 0.6s ease-in-out;
+    padding: 2rem;
+    text-align: center;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
     }
-
-    @keyframes revealFade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="container" id="main">
